@@ -589,46 +589,87 @@
 
 /*** Testimonial Start ***/
 
-.testimonial-item {
-    background: #e3f0eb;
+/* ===============================
+   TESTIMONIAL CARD STYLING
+================================= */
 
+.testimonial-item {
+    background: #ffffff; /* changed from green */
+    border-radius: 12px;
+    padding: 30px;
+    transition: all 0.3s ease;
 }
 
+/* Hover Lift Effect */
+.testimonial-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Improve Text Readability */
+.testimonial-item p {
+    line-height: 1.6;
+}
+
+/* ===============================
+   QUOTE ICON STYLING
+================================= */
+
+.quote-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    border-radius: 50%;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.quote-icon i {
+    color: #ffffff;
+}
+
+/* ===============================
+   OWL CAROUSEL DOTS
+================================= */
+
 .testimonial-carousel .owl-dots {
-    margin-top: 15px;
+    margin-top: 25px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
 }
 
 .testimonial-carousel .owl-dot {
-    position: relative;
-    display: inline-block;
-    margin: 0 5px;
-    width: 15px;
-    height: 15px;
-    background: #c1dad0;
-    border-radius: 15px;
-    transition: .5s;
+    margin: 0 6px;
+    width: 12px;
+    height: 12px;
+    background: #dcdcdc;
+    border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
 .testimonial-carousel .owl-dot.active {
     width: 30px;
+    border-radius: 20px;
     background: var(--bs-primary);
 }
 
-.testimonial-carousel .owl-item.center {
-    position: relative;
-    z-index: 1;
+/* ===============================
+   CENTER ACTIVE TESTIMONIAL
+================================= */
+
+.testimonial-carousel .owl-item {
+    transition: all 0.3s ease;
+    opacity: 0.6;
 }
 
-.testimonial-carousel .owl-item .testimonial-item {
-    transition: .5s;
+.testimonial-carousel .owl-item.center {
+    opacity: 1;
+    z-index: 2;
 }
 
 .testimonial-carousel .owl-item.center .testimonial-item {
-    background: #FFFFFF !important;
-    box-shadow: 0 0 30px #DDDDDD;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
 /*** Testimonial End ***/
