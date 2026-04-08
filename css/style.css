@@ -368,67 +368,141 @@
 
 /*** Project Start ***/
 
+/*** CLIENTS / PROJECT SECTION START ***/
+
+.project-item {
+    height: 100%;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 10px;
+    background: #fff;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Container */
 .project-img {
     position: relative;
-    padding: 10px;
-}
-
-.project-img::before {
-    content: "";
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    top: 0;
-    left: 0;
-    background: var(--bs-secondary);
-    border-radius: 10px;
-    opacity: 1;
-    z-index: -1;
-    transition: .5s;
-}
-
-.project-img::after {
-    content: "";
-    width: 120px;
-    height: 120px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    background: var(--bs-primary);
-    border-radius: 10px;
-    opacity: 1;
-    z-index: -1;
-    transition: .5s;
-}
-
-.project-content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    height: 220px; /* uniform height */
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-}
-
-.project-content a {
-    display: inline-block;
-    padding: 20px 25px;
-    background: var(--bs-primary);
+    overflow: hidden;
     border-radius: 10px;
+    background: #fff;
 }
 
-.project-item:hover .project-content {
-    opacity: 1;
-    transition: .5s;
+/* Images */
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* keeps logos neat */
+    transition: transform 0.4s ease;
 }
 
+/* Hover zoom */
+.project-item:hover .project-img img {
+    transform: scale(1.05);
+}
+
+/* Decorative background borders */
+.project-img::before,
+.project-img::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    z-index: -1;
+    transition: 0.4s ease;
+}
+
+.project-img::before {
+    top: 0;
+    left: 0;
+    background: var(--bs-secondary);
+    opacity: 0.08;
+}
+
+.project-img::after {
+    bottom: 0;
+    right: 0;
+    background: var(--bs-primary);
+    opacity: 0.08;
+}
+
+/* Hover removes background shapes */
 .project-item:hover .project-img::before,
 .project-item:hover .project-img::after {
     opacity: 0;
 }
+
+/* Overlay content */
+.project-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+/* Show on hover */
+.project-item:hover .project-content {
+    opacity: 1;
+}
+
+/* Overlay button */
+.project-content a {
+    display: inline-block;
+    padding: 12px 20px;
+    background: var(--bs-primary);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* Text styling */
+.project-content h4 {
+    color: #fff;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Button hover */
+.project-content a:hover {
+    background: var(--bs-secondary);
+}
+
+/*** RESPONSIVE TWEAKS ***/
+
+/* Tablet */
+@media (max-width: 991px) {
+    .project-img {
+        height: 200px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .project-img {
+        height: 180px;
+    }
+}
+
+/*** CLIENTS / PROJECT SECTION END ***/
 
 /*** Project End ***/
 
